@@ -3,8 +3,11 @@ import { ProtectedRoute } from './auth/ProtectedRoute';
 import { AppShell } from './components/layout/AppShell';
 import { LoginPage } from './pages/LoginPage';
 import { SignupPage } from './pages/SignupPage';
+import { HomePage } from './pages/HomePage';
 import { LibraryPage } from './pages/LibraryPage';
 import { DiscoverPage } from './pages/DiscoverPage';
+import { ArticleListPage } from './pages/ArticleListPage';
+import { ArticleDetailPage } from './pages/ArticleDetailPage';
 
 function App() {
   return (
@@ -16,13 +19,16 @@ function App() {
       {/* 인증 필요 라우트 */}
       <Route element={<ProtectedRoute />}>
         <Route element={<AppShell />}>
+          <Route path="/" element={<HomePage />} />
           <Route path="/library" element={<LibraryPage />} />
           <Route path="/discover" element={<DiscoverPage />} />
+          <Route path="/articles" element={<ArticleListPage />} />
+          <Route path="/articles/:slug" element={<ArticleDetailPage />} />
         </Route>
       </Route>
 
       {/* 기본 진입 */}
-      <Route path="*" element={<Navigate to="/library" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

@@ -67,12 +67,13 @@ src/
 │  ├─ ui/            # 디자인 시스템 프리미티브 (도메인 무관, 재사용)
 │  │  ├─ Button, Input, Field, Badge, Chip, Card
 │  │  └─ index.ts    # 배럴 — 화면에서는 여기서만 import
-│  ├─ layout/        # AppShell, TopBar (앱 골격)
-│  ├─ WebtoonCard.tsx  # 도메인 컴포넌트 (프리미티브 조합)
-│  └─ TierBadge.tsx
-├─ pages/            # 라우트 단위 화면 (LoginPage, LibraryPage …)
+│  ├─ layout/        # AppShell · TopBar · BottomNav · nav.ts(공유 메뉴)
+│  ├─ home/          # 홈 섹션 (Hero · SectionHeader · TasteStats)
+│  ├─ WebtoonCard.tsx · ArticleCard.tsx · TierBadge.tsx · Logo.tsx  # 도메인 컴포넌트
+├─ pages/            # 라우트 단위 화면 (Home·Library·Discover·ArticleList·ArticleDetail·Login·Signup)
 ├─ auth/             # AuthContext(목), ProtectedRoute
-├─ lib/              # cn(), gradient() 등 순수 유틸
+├─ lib/              # cn() · gradient() · articles(md 로더) 등 순수 유틸
+├─ content/articles/ # 아티클 마크다운 (.md) — 떨구면 자동 등록
 ├─ types/            # 도메인 타입 (Webtoon, Tier)
 └─ data/             # webtoons.ts (xlsx 변환 산출물)
 ```
@@ -119,7 +120,22 @@ src/
 
 - `AuthProvider`(`auth/AuthContext.tsx`)가 `user/login/signup/logout` 제공. **현재 localStorage 목** — 백엔드(`webtoon/be`) 준비 시 `login/signup` 내부만 fetch로 교체하면 화면은 그대로 동작.
 - `ProtectedRoute`로 비로그인 시 `/login` 리다이렉트. 라우트 트리는 `App.tsx`.
-- 공개: `/login`, `/signup` · 보호: `/library`, `/discover`(AppShell 안).
+- 공개: `/login`, `/signup` · 보호(AppShell 안): `/`(홈) · `/library` · `/discover` · `/articles` · `/articles/:slug`.
+- 네비 메뉴는 `components/layout/nav.ts` 한 곳에서 정의 → TopBar(데스크탑 `sm+`)와 BottomNav(모바일 `sm` 미만 하단 탭)가 공유. 메뉴 추가는 여기만 수정.
+
+---
+
+## 5.5 홈 & 아티클
+
+**홈**(`pages/HomePage.tsx`) = 서비스 아이덴티티. 섹션 단위로 조립하며 새 섹션은 `components/home/SectionHeader`를 재사용:
+- `Hero`(브랜드 네이비+코발트 글로우) · `TasteStats`(실데이터 요약) · 인기 아티클 · 취향 코어(A티어).
+
+**아티클 = 마크다운 파일**. `src/content/articles/*.md`에 파일을 떨구면 자동 등록(빌드시 glob). 파일명이 곧 URL slug.
+- 프론트매터: `title · date(YYYY-MM-DD) · author · category · tags:[..] · excerpt · featured`.
+- 본문은 GFM 마크다운(react-markdown + remark-gfm), 상세는 `prose prose-invert`로 렌더.
+- 아티클 카드는 **브랜드 블루 그라데이션**(`articleGradient`)으로 웹툰 카드(전체 장르색)와 시각 구분.
+- ⚠️ **CJK 볼드 함정**: 닫는 `**` 바로 뒤에 한글이 붙으면 파싱 안 됨(CommonMark CJK 규칙). 예) `**무엇을**까지`(X) → `**무엇을**(공백/문장부호 뒤)`(O). 볼드 뒤엔 공백·문장부호를 두자.
+- 저작권: 본문은 자체 표현으로. 원작 텍스트·이미지 금지.
 
 ---
 

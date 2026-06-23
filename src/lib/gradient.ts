@@ -69,3 +69,15 @@ export function cardGradient(
     hue,
   };
 }
+
+// 아티클 전용 그라데이션 — 브랜드 블루(코발트~인디고~네이비) 계열로 묶어
+// 웹툰 카드(전체 장르 스펙트럼)와 시각적으로 구분되게 한다. seed로만 변주.
+export function articleGradient(seed: string): CardGradient {
+  const h = hash(seed);
+  const hue = 205 + (h % 50); // 205~255 (cobalt → indigo)
+  const hue2 = hue + 12 + (h % 18);
+  const angle = 120 + (h % 50);
+  const c1 = `hsl(${hue} 62% 46%)`;
+  const c2 = `hsl(${hue2} 55% 26%)`;
+  return { background: `linear-gradient(${angle}deg, ${c1}, ${c2})`, hue };
+}
