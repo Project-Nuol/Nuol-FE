@@ -7,7 +7,7 @@ const SYMBOL_SRC = '/brand/logo-symbol.png';
 interface LogoProps {
   /** 심볼 높이(px). default 28 */
   size?: number;
-  /** 'symbol' = 심볼 단독, 'lockup' = 심볼 + 한글 워드마크 "너울" */
+  /** 'symbol' = 심볼 단독, 'lockup' = 심볼 + 영문 워드마크 "Nuol" */
   variant?: 'symbol' | 'lockup';
   /** lockup 배치 방향. default 'horizontal' */
   orientation?: 'horizontal' | 'vertical';
@@ -20,7 +20,7 @@ export function Logo({
   orientation = 'horizontal',
   className,
 }: LogoProps) {
-  // 한글 "너울"은 반드시 웹폰트 텍스트로 렌더 (이미지/AI 생성 금지).
+  // 워드마크 "Nuol"은 반드시 웹폰트 텍스트(Pretendard)로 렌더 (이미지/AI 생성 금지).
   const symbol = (
     <img
       src={SYMBOL_SRC}
@@ -34,7 +34,7 @@ export function Logo({
 
   if (variant === 'symbol') {
     return (
-      <span role="img" aria-label="너울" className={cn('inline-flex', className)}>
+      <span role="img" aria-label="Nuol" className={cn('inline-flex', className)}>
         {symbol}
       </span>
     );
@@ -43,21 +43,21 @@ export function Logo({
   return (
     <span
       role="img"
-      aria-label="너울 Nuol"
+      aria-label="Nuol"
       className={cn(
         'inline-flex',
         orientation === 'vertical'
-          ? 'flex-col items-center gap-1.5'
+          ? 'flex-col items-center gap-1'
           : 'flex-row items-center gap-2',
         className,
       )}
     >
       {symbol}
       <span
-        style={{ fontSize: Math.round(size * 0.82) }}
+        style={{ fontSize: Math.round(size * 0.92) }}
         className="font-semibold leading-none tracking-tight text-current"
       >
-        너울
+        Nuol
       </span>
     </span>
   );

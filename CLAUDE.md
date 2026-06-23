@@ -108,8 +108,9 @@ src/
 
 서비스명 **너울**(큰 물결) / 영문·도메인 **Nuol**. 심볼은 단일 스트로크 파도 스웰.
 
+- 서비스명: 한글 **너울** / 영문 워드마크·도메인 **Nuol** (로고 락업·영문 표기는 Nuol로 통일).
 - **`<Logo />`** (`components/Logo.tsx`) — `size`(심볼 높이px), `variant: symbol|lockup`, `orientation: horizontal|vertical`.
-  - lockup = 심볼 + 한글 "너울". **워드마크는 반드시 웹폰트 텍스트(Pretendard)** — 이미지/AI 생성 금지. 색은 `currentColor`라 라이트/다크 자동 대응.
+  - lockup = 심볼 + 영문 "Nuol". **워드마크는 반드시 웹폰트 텍스트(Pretendard)** — 이미지/AI 생성 금지. 색은 `currentColor`라 라이트/다크 자동 대응.
 - **자산** (`public/`): `brand/logo-symbol.svg`(원본 보존, 수정 금지) · `brand/logo-symbol.png`(여백 트림+다운스케일, 컴포넌트가 사용) · `favicon-32.png` · `apple-touch-icon.png` · `icon-192/512.png`(네이비 #10183A 둥근 배경+심볼) · `site.webmanifest`.
 - **금지(엄수)**: 심볼 패스/색 변경, 비율 왜곡, 그림자·3D·외곽선 추가, 웹툰 캐릭터·말풍선 결합. **크기 조절만 허용.** 여백은 심볼 높이의 최소 30% 확보.
 - 원본 첨부는 벡터가 아니라 PNG-in-SVG 래스터였음 → 패스가 없으므로 "원본 보존 + 다운스케일 파생"으로 운용.
