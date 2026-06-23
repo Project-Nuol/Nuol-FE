@@ -35,8 +35,8 @@ export function LoginPage() {
 
   return (
     <AuthLayout
-      title="다시 오셨네요"
-      subtitle="기록해 둔 취향으로 바로 이어서."
+      title="다시 돌아온 걸 환영해요"
+      subtitle="당신의 취향을 찾을 때까지"
       footer={
         <>
           아직 계정이 없으신가요?{' '}

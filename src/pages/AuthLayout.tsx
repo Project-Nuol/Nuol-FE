@@ -27,16 +27,15 @@ export function AuthLayout({ title, subtitle, children, footer }: AuthLayoutProp
             <p className="text-3xl font-bold leading-snug text-white">
               별점이 아니라
               <br />
-              한줄평으로 기록하는
+              한줄평으로 보는
               <br />
-              나만의 웹툰 취향.
+              나만의 웹툰 취향
             </p>
             <p className="mt-4 max-w-sm text-white/70">
-              본 작품을 남기면 임베딩이 취향을 학습해 “이거 좋아했으면 이것도”를
-              찾아줍니다.
+              당신의 웹툰 취향 알고리즘을 분석해 비슷하거나, 아예 색다른 장르를 추천해줍니다
             </p>
           </div>
-          <p className="text-sm text-white/50">표지 이미지 없이, 색과 타이포로.</p>
+          <p className="text-sm text-white/50">Designed by HwangHyeong</p>
         </div>
       </aside>
 
