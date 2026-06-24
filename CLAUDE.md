@@ -111,9 +111,10 @@ src/
 - 서비스명: 한글 **너울** / 영문 워드마크·도메인 **Nuol** (로고 락업·영문 표기는 Nuol로 통일).
 - **`<Logo />`** (`components/Logo.tsx`) — `size`(심볼 높이px), `variant: symbol|lockup`, `orientation: horizontal|vertical`.
   - lockup = 심볼 + 영문 "Nuol". **워드마크는 반드시 웹폰트 텍스트(Pretendard)** — 이미지/AI 생성 금지. 색은 `currentColor`라 라이트/다크 자동 대응.
-- **자산** (`public/`): `brand/logo-symbol.svg`(원본 보존, 수정 금지) · `brand/logo-symbol.png`(여백 트림+다운스케일, 컴포넌트가 사용) · `favicon-32.png` · `apple-touch-icon.png` · `icon-192/512.png`(네이비 #10183A 둥근 배경+심볼) · `site.webmanifest`.
-- **금지(엄수)**: 심볼 패스/색 변경, 비율 왜곡, 그림자·3D·외곽선 추가, 웹툰 캐릭터·말풍선 결합. **크기 조절만 허용.** 여백은 심볼 높이의 최소 30% 확보.
-- 원본 첨부는 벡터가 아니라 PNG-in-SVG 래스터였음 → 패스가 없으므로 "원본 보존 + 다운스케일 파생"으로 운용.
+- **자산** (`public/`): `brand/logo-symbol.svg`(원본 보존, 수정 금지) · `brand/logo-symbol.png`(여백 트림+다운스케일, 컴포넌트가 사용) · `brand/logo-trace.svg`(PNG를 potrace로 벡터화한 심볼 패스 — 3D용, 재생성 `node trace-logo.cjs`) · `favicon-32.png` · `apple-touch-icon.png` · `icon-192/512.png`(네이비 #10183A 둥근 배경+심볼) · `site.webmanifest`.
+- **금지(엄수, 플랫 로고)**: UI에 쓰이는 평면 로고(`<Logo />`·파비콘·앱 아이콘)는 심볼 패스/색 변경, 비율 왜곡, 그림자·외곽선 추가, 웹툰 캐릭터·말풍선 결합 금지. **크기 조절만 허용.** 여백은 심볼 높이의 최소 30% 확보.
+- **허용(예외, 너울 히어로 3D)**: 홈 히어로의 브랜드 면에 한해 심볼의 **3D 입체 연출 허용**. 단 ① 형태는 `logo-trace.svg`(원본 실루엣)에서만 파생 — 임의로 곡선을 새로 그리지 말 것, ② 색은 코발트 계열만(브랜드 토큰), ③ 장식 레이어이므로 텍스트 가독성·접근성 해치지 않기, ④ `prefers-reduced-motion` 정지 + 에러 바운더리 필수. 구현: `components/home/HeroWave3D.tsx`. (이 예외는 평면 로고 규칙에는 영향 없음.)
+- 원본 첨부는 PNG-in-SVG 래스터(패스 없음)였으나, potrace로 벡터화해 `logo-trace.svg`를 확보 → 3D 압출(extrude)에 사용. 평면 로고는 여전히 PNG 다운스케일 파생으로 운용.
 
 ---
 

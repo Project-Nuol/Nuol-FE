@@ -76,3 +76,21 @@ body {
   background: var(--color-brand-600);
   color: #fff;
 }
+
+/* 히어로 너울 결 — 좌우로 천천히 흐르는 파도 드리프트 */
+@keyframes hero-wave-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+.hero-wave-drift {
+  animation: hero-wave-drift 18s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-wave-drift {
+    animation: none;
+  }
+}

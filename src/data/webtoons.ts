@@ -31,7 +31,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "글 비가 · 그림 LICO",
     "platform": "네이버",
     "genre": "무협",
-    "tier": "A",
+    "tier": "B",
     "oneLiner": "청명이의 유쾌통쾌 무림 액션 만화",
     "tags": [
       "회귀",
@@ -185,7 +185,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "백덕수",
     "platform": "네이버",
     "genre": "판타지",
-    "tier": null,
+    "tier": "C",
     "oneLiner": null,
     "tags": [
       "아이돌",
@@ -317,7 +317,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": null,
     "platform": "네이버",
     "genre": "판타지",
-    "tier": null,
+    "tier": "B",
     "oneLiner": null,
     "tags": [
       "옴니버스",
@@ -339,7 +339,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "글 서이레 · 그림 나몬",
     "platform": "네이버",
     "genre": "드라마",
-    "tier": null,
+    "tier": "D",
     "oneLiner": null,
     "tags": [
       "여성국극",
@@ -361,7 +361,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "라마",
     "platform": "네이버",
     "genre": "드라마",
-    "tier": "A",
+    "tier": "B",
     "oneLiner": "많은 생각을 하게 되는 작품",
     "tags": [
       "저승사자",
@@ -383,7 +383,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "그리너",
     "platform": "네이버",
     "genre": "로맨스",
-    "tier": null,
+    "tier": "D",
     "oneLiner": null,
     "tags": [
       "학원",
@@ -691,7 +691,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "조석",
     "platform": "네이버",
     "genre": "코미디",
-    "tier": "A",
+    "tier": "B",
     "oneLiner": "그저 웃어라",
     "tags": [
       "개그",
@@ -801,7 +801,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "양영순",
     "platform": "네이버",
     "genre": "기타",
-    "tier": null,
+    "tier": "D",
     "oneLiner": null,
     "tags": [
       "SF",
@@ -846,7 +846,7 @@ export const WEBTOONS: Webtoon[] = [
     "platform": "네이버",
     "genre": "공포",
     "tier": "A",
-    "oneLiner": null,
+    "oneLiner": "주인공에게 스위트홈이란 무엇일까",
     "tags": [
       "괴물",
       "생존",
@@ -867,7 +867,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "주동근",
     "platform": "네이버",
     "genre": "공포",
-    "tier": "A",
+    "tier": "B",
     "oneLiner": "네이버 고전 좀비물. 날것의 느낌 그대로.",
     "tags": [
       "좀비",
@@ -911,7 +911,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "순끼",
     "platform": "네이버",
     "genre": "로맨스",
-    "tier": "A",
+    "tier": "B",
     "oneLiner": "무섭지만 달달한 20대 로맨스",
     "tags": [
       "대학",
@@ -977,7 +977,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": "난다",
     "platform": "네이버",
     "genre": "일상",
-    "tier": null,
+    "tier": "D",
     "oneLiner": null,
     "tags": [
       "결혼",
@@ -1043,7 +1043,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": null,
     "platform": "네이버",
     "genre": "판타지",
-    "tier": null,
+    "tier": "D",
     "oneLiner": null,
     "tags": [
       "판타지",
@@ -1065,7 +1065,7 @@ export const WEBTOONS: Webtoon[] = [
     "author": null,
     "platform": "네이버",
     "genre": "판타지",
-    "tier": null,
+    "tier": "D",
     "oneLiner": null,
     "tags": [
       "회귀",
